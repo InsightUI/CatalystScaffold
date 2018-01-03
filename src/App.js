@@ -1,16 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Provider } from 'react-redux'
-import { BrowserRouter, Switch } from 'react-router-dom'
+import { Route } from 'react-router'
+import { Switch } from 'react-router-dom'
+import { ConnectedRouter } from 'react-router-redux'
 import { store } from './store'
+import { history } from './store/navigation'
 
 const App = () => {
 	return (
 		<Provider store={store}>
-			<BrowserRouter>
+			<ConnectedRouter history={history}>
 				<Switch>
-					<span>Hello world</span>
+					<Route exact path="/" component={() => (
+						<span>Hello React</span>
+					)}/>
 				</Switch>
-			</BrowserRouter>
+			</ConnectedRouter>
 		</Provider>
 	)
 }

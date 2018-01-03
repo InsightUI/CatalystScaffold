@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux'
-import makeRootReducer, { injectReducer } from './reducers'
+import makeRootReducer, { injectReducer } from './makeReducer'
 import middleware from './middleware'
 
 const composeEnchancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
