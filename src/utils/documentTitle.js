@@ -8,8 +8,7 @@ const updateTitle = (newTitle) => document.title = newTitle
 
 export const titleReducer = (state = getTitle(), action) => {
   if (action.type === CHANGE_TITLE) {
-    updateTitle(action.title)
-    return getTitle()
+    return updateTitle(action.title)
   }
   return state
 }

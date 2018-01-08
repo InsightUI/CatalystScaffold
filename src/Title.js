@@ -8,7 +8,7 @@ const Title = (props) => {
   return (
     <div>
       <h1>{title}</h1>
-      <input type='text' onChange={(e) => { updateTitleAction(e.target.value) }} />
+      <input type='text' defaultValue={title} onChange={(e) => { updateTitleAction(e.target.value) }} />
     </div>
   )
 }
