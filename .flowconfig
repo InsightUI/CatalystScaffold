@@ -1,4 +1,6 @@
 [ignore]
+<PROJECT_ROOT>/build/.*
+<PROJECT_ROOT>/__tests__/.*
 
 [include]
 
@@ -7,5 +9,6 @@
 [lints]
 
 [options]
+emoji=true
 
 [strict]
