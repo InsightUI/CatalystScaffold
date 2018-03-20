@@ -8,6 +8,7 @@ export const makeRootReducer = asyncRducers => {
 	})
 }
 
+// This is how we inject a async reducer into the redux store.
 export const injectReducer = (store, { key, reducer }) => {
 	if (!store.asyncRducers[key]) {
 		store.asyncRducers[key] = reducer
