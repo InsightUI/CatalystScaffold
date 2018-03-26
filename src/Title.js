@@ -11,8 +11,8 @@ const Title = props => {
 			<input
 				type="text"
 				defaultValue={title}
-				onChange={e => {
-					updateTitleAction(e.target.value)
+				onChange={({ target }) => {
+					updateTitleAction(target.value)
 				}}
 			/>
 		</div>
