@@ -3,13 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "flow-bin": "^0.68.0",
     "history": "^4.7.2",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.0.0",
-    "node-sass-chokidar": "^1.1.2",
-    "npm-run-all": "^4.1.2",
-    "prettier": "^1.11.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
@@ -19,16 +13,32 @@
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
   },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "flow-bin": "^0.68.0",
+    "husky": "^0.14.3",
+    "kcd-scripts": "^0.36.1",
+    "lint-staged": "^7.0.0",
+    "node-sass-chokidar": "^1.2.0",
+    "npm-run-all": "^4.1.2",
+    "prettier": "^1.11.1",
+    "rimraf": "^2.6.2"
+  },
   "scripts": {
-    "precommit": "lint-staged",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
+    "prebuild": "rimraf build",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
+    "lint": "kcd-scripts lint",
     "test": "react-scripts test --env=jsdom",
-    "flow": "flow"
+    "test:cover": "npm run test -- --coverage",
+    "test:update": "npm run test:cover -s -- --updateSnapshot",
+    "validate": "kcd-scripts validate lint,test:cover",
+    "setup": "npm install && npm run validate --silent",
+    "precommit": "kcd-scripts precommit"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
@@ -39,5 +49,13 @@
       "eslint --fix",
       "git add"
     ]
-  }
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/kcd-scripts/eslint.js"
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "coverage",
+    "build"
+  ]
 }
