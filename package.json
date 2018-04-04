@@ -4,21 +4,21 @@
   "private": true,
   "dependencies": {
     "history": "^4.7.2",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.9",
-    "react-scripts": "^1.1.1",
+    "react-scripts": "1.1.4",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "concurrently": "^3.5.1",
-    "flow-bin": "^0.68.0",
+    "flow-bin": "^0.69.0",
     "husky": "^0.14.3",
     "kcd-scripts": "^0.36.1",
-    "lint-staged": "^7.0.0",
+    "lint-staged": "^7.0.3",
     "node-sass-chokidar": "^1.2.0",
     "npm-run-all": "^4.1.2",
     "prettier": "^1.11.1",
@@ -49,9 +49,6 @@
       "eslint --fix",
       "git add"
     ]
-  },
-  "eslintConfig": {
-    "extends": "./node_modules/kcd-scripts/eslint.js"
   },
   "eslintIgnore": [
     "node_modules",
