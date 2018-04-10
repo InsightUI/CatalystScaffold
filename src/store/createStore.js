@@ -16,7 +16,7 @@ export default (initialState = {}) => {
 	// Async Reducers are just that. These are meant to be code split points where
 	// we will dynamically load new reducers in. Much like not loading admin reducers
 	// for normal users and so on.
-	store.asyncRducers = {}
+	store.asyncReducers = {}
 	store.injectReducer = (key, reducer) => injectReducer(store, { key, reducer })
 
 	return store
