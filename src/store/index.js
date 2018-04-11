@@ -1,3 +1,5 @@
+// @flow
+
 import createStore from './createStore'
 import initialState from './initialState'
 

@@ -3,13 +3,13 @@
 import { injectReducer } from './makeReducer'
 
 export function asyncStoreEnhancer() {
-	const asyncReducers = {}
+	let asyncReducers = {}
 
-	return createStore => (...args) => {
+	return (createStore: Function) => (...args: any) => {
 		const store = createStore(...args)
 
 		function inject(key: string, reducer: Function) {
-			injectReducer(store, { key, reducer })
+			injectReducer({ key, reducer })
 		}
 
 		return {

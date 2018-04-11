@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
 import reducers from './reducers/'
+import { store } from './'
 
 export const makeRootReducer = asyncReducers => {
 	return combineReducers({
@@ -9,7 +10,7 @@ export const makeRootReducer = asyncReducers => {
 }
 
 // This is how we inject a async reducer into the redux store.
-export const injectReducer = (store, { key, reducer }) => {
+export const injectReducer = ({ key, reducer }) => {
 	if (!store.asyncReducers[key]) {
 		store.asyncReducers[key] = reducer
 		store.replaceReducer(makeRootReducer(store.asyncReducers))

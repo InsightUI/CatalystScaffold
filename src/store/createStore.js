@@ -9,7 +9,7 @@ import { asyncStoreEnhancer } from './asyncStoreEnhancer'
 // to see my actions and state then who am I to stop them.
 const composeEnchancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-export default (initialState = {}) => {
+export default (initialState: ?Object = {}) => {
 	const store = createStore(
 		makeRootReducer(),
 		initialState,

@@ -17,7 +17,7 @@
     "concurrently": "^3.5.1",
     "flow-bin": "^0.69.0",
     "husky": "^0.14.3",
-    "kcd-scripts": "^0.36.1",
+    "kcd-scripts": "^0.37.0",
     "lint-staged": "^7.0.4",
     "node-sass-chokidar": "^1.2.0",
     "npm-run-all": "^4.1.2",
@@ -38,7 +38,8 @@
     "test:update": "npm run test:cover -s -- --updateSnapshot",
     "validate": "kcd-scripts validate lint,test:cover",
     "setup": "npm install && npm run validate --silent",
-    "precommit": "kcd-scripts precommit"
+    "precommit": "kcd-scripts precommit",
+    "flow": "flow check src"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
