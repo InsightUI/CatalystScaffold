@@ -1,6 +1,9 @@
+// @flow
+
 import { createStore, applyMiddleware, compose } from 'redux'
-import makeRootReducer, { injectReducer } from './makeReducer'
+import makeRootReducer from './makeReducer'
 import middleware from './middleware'
+import { asyncStoreEnhancer } from './asyncStoreEnhancer'
 
 // We keep this even in prodction because it only helps debugging. If anyone wants
 // to see my actions and state then who am I to stop them.
@@ -10,14 +13,8 @@ export default (initialState = {}) => {
 	const store = createStore(
 		makeRootReducer(),
 		initialState,
-		composeEnchancer(applyMiddleware(...middleware))
+		composeEnchancer(applyMiddleware(...middleware), asyncStoreEnhancer())
 	)
-
-	// Async Reducers are just that. These are meant to be code split points where
-	// we will dynamically load new reducers in. Much like not loading admin reducers
-	// for normal users and so on.
-	store.asyncReducers = {}
-	store.injectReducer = (key, reducer) => injectReducer(store, { key, reducer })
 
 	return store
 }
