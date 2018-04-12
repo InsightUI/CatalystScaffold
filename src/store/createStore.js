@@ -5,7 +5,7 @@ import makeRootReducer from './makeReducer'
 import middleware from './middleware'
 import { asyncStoreEnhancer } from './asyncStoreEnhancer'
 
-// We keep this even in prodction because it only helps debugging. If anyone wants
+// We keep this even in production because it only helps debugging. If anyone wants
 // to see my actions and state then who am I to stop them.
 const composeEnchancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
