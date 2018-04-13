@@ -14,7 +14,10 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.3",
     "concurrently": "^3.5.1",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-flowtype": "^2.46.1",
     "flow-bin": "^0.69.0",
     "husky": "^0.14.3",
     "kcd-scripts": "^0.37.0",
