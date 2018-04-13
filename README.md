@@ -3,7 +3,7 @@
 ## Installing and Getting Started
 
 Clone this project `git clone https://github.com/InsightUI/CatalystScaffold.git`<br>
-Install `npm install`<br>
+Install `npm setup`<br>
 Start `npm start`
 
 ## Available scripts
